@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Text Highlighter and Saver",
+  "version": "1.0",
+  "description": "Highlight text on a website and save it along with the URL for future reference.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png"
+  }
+}
